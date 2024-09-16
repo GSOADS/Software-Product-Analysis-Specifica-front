@@ -1,6 +1,9 @@
 //alert("TEXTO");//se tiver funcionando um alerta vai aparecer
 const Urlserver = "http://localhost:8080/User/post"
-var conta=1;
+const UrlserverPost= "http://localhost:8080/produtos/nome_lista"
+const UrlserverPost2= "http://localhost:8080/produtos/lista2"
+var conta=0;
+
 
 function additem()
 { 
@@ -63,11 +66,11 @@ function additem()
 
 function botaosalvar()
 {
-  var dados = new Array();
-  
+  var dbLista = new Array();
+  var dbNomeDaLista;
   
 
-  for (var quantidade_linhas =1; quantidade_linhas< conta;quantidade_linhas++)
+  for (var quantidade_linhas =0; quantidade_linhas< conta;quantidade_linhas++)
   {
     // Obtém os valores dos inputs
     var input_lista_numero = document.getElementById(`input_numero${quantidade_linhas}`).value;
@@ -81,16 +84,23 @@ function botaosalvar()
 
     var lista = 
     {
-      "numero":input_lista_numero,
-      "compra":input_lista_compra,
-      "local":input_lista_local,
-      "item":input_lista_item,
-      "nomeLista":input_lista_nomelista,
+      // "numero":input_lista_numero,
+      "quemVaiComprar":input_lista_compra,
+      "sugestaoDeLugar":input_lista_local,
+      "itemLista":input_lista_item,
+      // "nomeLista":input_lista_nomelista,
     };
+
+    dbNomeDaLista=
+    {
+      "nomeLista":input_lista_nomelista
+
+    };
+
 
     //Salva o valor das informaçoes do json no array
 
-    dados[quantidade_linhas] = lista;
+    dbLista[quantidade_linhas] = lista;
     
 
 
@@ -98,10 +108,73 @@ function botaosalvar()
     // console.log(quantidade_linhas);
   }
 
-   var jsonDadoslista =JSON.stringify(dados);
-  console.log(jsonDadoslista)
+  const data = {
+    "dbNomeDaLista": {
+      "nomeDaSuaLista": dbNomeDaLista.nomeLista
+    },
+    "dbLista": dbLista
+  };
+  
+  
+ 
 
-  // console.log(dados);
+  
+ 
+  
+
+   
+
+
+  // console.log({dbNomeDaLista,dbLista});
+  // console.log(dbNomeDaLista.constructor.name);
+  // console.log(dbLista.constructor.name);
+
+
+  console.log("Estou no POST")
+  const configuracao = {
+  method: 'POST',
+  headers: {
+      'Content-Type': 'application/json',
+      'headerLista': 'Dado'
+  },
+  body: JSON.stringify(data
+    
+      
+      // "dbLista":[dbLista]
+
+    
+
+
+//     {"dbNomeDaLista": {
+//     "nomeDaSuaLista":"Lista de presente do Gabriel"},
+//     "dbLista": 
+//   [
+//     {
+//  "itemLista":"PLAYSTATION5510",
+//  "quemVaiComprar":"TAISE",
+//  "sugestaoDeLugar":"MAGAZINE" },
+// {
+  
+//  "itemLista":"PLAYSTATION10",
+//  "quemVaiComprar":"GEPETO",
+//  "sugestaoDeLugar":"MAGAZINE"
+
+// }
+//   ]}
+
+)
+};
+
+// Enviando a requisição
+fetch(UrlserverPost, configuracao)
+  // .then(response => response.json())
+  .then(data => console.log('Sucesso:', data))
+  .catch(error => console.error('Erro:', error));
+
+
+
+
+  // objeto.constructor.name
 
   // var input_lista_numero = document.getElementById("input_numero1").value;
   // var input_lista_compra = document.getElementById("input_compra1").value;
@@ -129,31 +202,34 @@ function botaosalvar()
 }
 
 
+
+
 let divusuario = document.getElementById("aqui_json")
 
-function POST()
-{
-fetch(Urlserver, 
-    {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-      // Puedes ajustar los encabezados según tus necesidades
-    },
-    body: JSON.stringify({nome:"ola"})
-  })
-  .then(response => response.json())
-  .then(data => {
-    // Almacenar la respuesta en una variable
-    var respuestaJSON = data;
-    // Mostrar la respuesta en una div
-    var resultadoDiv = document.getElementById('aqui_json');
-    resultadoDiv.inputMode = JSON.stringify(respuestaJSON);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-}
+// function POST()
+// {
+// fetch(Urlserver, 
+//     {
+//     method: 'POST',
+//     headers: {
+
+//       'Content-Type': 'application/json'
+//       // Puedes ajustar los encabezados según tus necesidades
+//     },
+//     body: JSON.stringify({nome:"ola"})
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//     // Almacenar la respuesta en una variable
+//     var respuestaJSON = data;
+//     // Mostrar la respuesta en una div
+//     var resultadoDiv = document.getElementById('aqui_json');
+//     resultadoDiv.inputMode = JSON.stringify(respuestaJSON);
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   });
+// }
 
 // function POST()
 // {
