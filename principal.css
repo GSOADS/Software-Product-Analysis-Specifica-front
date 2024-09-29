@@ -101,7 +101,19 @@ body
     height: 500px;
     margin: 5px 10px 5px 10px;
     border: 3px solid blue;
+  text-align: center;
+  
 
+}
+.conteudo_itemlista img
+{
+
+  padding-top: 15%;
+  width: 90%;
+  height: 50%;
+  /* image-rendering: auto; */
+  /* /* background-color: black; */
+  /* border: 50px solid red;  */
 }
 
 .conteudo_itemlista_nome

@@ -64,6 +64,7 @@ function additem()
 
 }
 
+
 function botaosalvar()
 {
   var dbLista = new Array();
@@ -114,16 +115,6 @@ function botaosalvar()
     },
     "dbLista": dbLista
   };
-  
-  
- 
-
-  
- 
-  
-
-   
-
 
   // console.log({dbNomeDaLista,dbLista});
   // console.log(dbNomeDaLista.constructor.name);
@@ -138,29 +129,6 @@ function botaosalvar()
       'headerLista': 'Dado'
   },
   body: JSON.stringify(data
-    
-      
-      // "dbLista":[dbLista]
-
-    
-
-
-//     {"dbNomeDaLista": {
-//     "nomeDaSuaLista":"Lista de presente do Gabriel"},
-//     "dbLista": 
-//   [
-//     {
-//  "itemLista":"PLAYSTATION5510",
-//  "quemVaiComprar":"TAISE",
-//  "sugestaoDeLugar":"MAGAZINE" },
-// {
-  
-//  "itemLista":"PLAYSTATION10",
-//  "quemVaiComprar":"GEPETO",
-//  "sugestaoDeLugar":"MAGAZINE"
-
-// }
-//   ]}
 
 )
 };
@@ -172,33 +140,6 @@ fetch(UrlserverPost, configuracao)
   .catch(error => console.error('Erro:', error));
 
 
-
-
-  // objeto.constructor.name
-
-  // var input_lista_numero = document.getElementById("input_numero1").value;
-  // var input_lista_compra = document.getElementById("input_compra1").value;
-  // var input_lista_local = document.getElementById("input_local1").value;
-  // var input_lista_item = document.getElementById("input_item1").value;
-  // var input_lista_nomelista = document.getElementById("inputnomelista").value;
-
-  // console.log("Cheguei aqui")
-
-  // var lista = 
-  // {
-  //   "numero":input_lista_numero,
-  //   "compra":input_lista_compra,
-  //   "local":input_lista_local,
-  //   "item":input_lista_item,
-  //   "nomeLista":input_lista_nomelista,
-  // };
-
-  // var jsonDadoslista =JSON.stringify(lista);
-  // console.log(jsonDadoslista)
-
-  // alarm = console.log("deucerto");
-
-
 }
 
 
@@ -206,56 +147,3 @@ fetch(UrlserverPost, configuracao)
 
 let divusuario = document.getElementById("aqui_json")
 
-// function POST()
-// {
-// fetch(Urlserver, 
-//     {
-//     method: 'POST',
-//     headers: {
-
-//       'Content-Type': 'application/json'
-//       // Puedes ajustar los encabezados según tus necesidades
-//     },
-//     body: JSON.stringify({nome:"ola"})
-//   })
-//   .then(response => response.json())
-//   .then(data => {
-//     // Almacenar la respuesta en una variable
-//     var respuestaJSON = data;
-//     // Mostrar la respuesta en una div
-//     var resultadoDiv = document.getElementById('aqui_json');
-//     resultadoDiv.inputMode = JSON.stringify(respuestaJSON);
-//   })
-//   .catch(error => {
-//     console.error('Error:', error);
-//   });
-// }
-
-// function POST()
-// {
-// fetch(Urlserver,{
-//     headers:
-//     {
-//         'Accept':'application/json',
-//         'Content-Type': 'application/json'
-//     },
-//     method:"Post",
-//         body: JSON.stringify (
-//             {nome:"ola"
-               
-//             })
-
-//     //converte string para json
-// }).then((response)=>
-// {response.json().
-//     then((dados)=>
-//     {console.log(dados)
-//         //let recebidos = dados//divusuario.innerHTML+=`<li>${response.JSON}</li>`
-
-//         //divusuario.innerHTML += usurios
-//         console.log(recebidos)
-//         //console.log
-    
-//     })
-// }
-// )}
