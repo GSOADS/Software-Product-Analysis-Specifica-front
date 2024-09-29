@@ -1,7 +1,11 @@
 //alert("TEXTO");//se tiver funcionando um alerta vai aparecer
 const Urlserver = "http://localhost:8080/User/post"
-const UrlserverPost= "http://localhost:8080/produtos/nome_lista"
+const UrlserverPostCriarLista= "http://localhost:8080/lista/criar"
+const urlserverGet="http://localhost:8080/produtos/nome_lista"
+
 const UrlserverPost2= "http://localhost:8080/produtos/lista2"
+
+
 var conta=0;
 
 
@@ -166,7 +170,7 @@ function botaosalvar()
 };
 
 // Enviando a requisição
-fetch(UrlserverPost, configuracao)
+fetch(UrlserverPostCriarLista, configuracao)
   // .then(response => response.json())
   .then(data => {
     console.log('Sucesso:', data);
