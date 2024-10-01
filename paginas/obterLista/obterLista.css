@@ -155,10 +155,12 @@ body
 }
 .conteudo_itemlista_linha input
 {font-family: "BungeeSpice-Regular";
+  text-align: center;
   
+
     margin: 10px;
-    width: 210px;
-    
+    width: 130px;
+    /* overflow-x: auto; */
     /* text-align: center; */
 }
 
@@ -166,12 +168,29 @@ body
 #inputnomelista
 {border-radius: 10px;
   font-family: "BungeeSpice-Regular";
-  padding-left: 10px;
+  padding-left: 20px;
+  text-align: left;
   
     width: 750px;
     height: 30px;
     margin: 6px;
 }
+
+#inputnomelista2
+{
+  border-radius: 10px;
+  font-family: "BungeeSpice-Regular";
+  padding-left: 50px;
+  text-align: center;
+  /* background-color: red; */
+    
+  width: 1000px;
+  /* height: 20px; */
+  margin: 6px;
+  /* border: solid; */
+  /* border-color: blueviolet; */
+}
+
 
 .inputlistamodelo
 {font-family: "BungeeSpice-Regular";

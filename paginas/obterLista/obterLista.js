@@ -9,6 +9,13 @@ var dbLista=dbLista;
 
 var conta=0;
 
+document.addEventListener("keydown", function(event) 
+{
+  if (event.key === "Enter") 
+    {
+      buscar();
+  }
+});
 
 function buscar()
 { 
@@ -37,7 +44,7 @@ function buscar()
         console.log("dbNOME",dbNomeDaLista);
         console.log("dbLISTA",dbLista);
 
-        alert(console.log(dbLista,dbNomeDaLista));
+        //alert(console.log(dbLista,dbNomeDaLista));//habilitar para teste
         constroiTabela(dbNomeDaLista,dbLista);
       
       })
@@ -53,24 +60,114 @@ function buscar()
   
       var input_lista_numero = document.createElement("input");
       input_lista_numero.type = "text";
-      input_lista_numero.id = `input_numero${dbNomeDaLista.id}`;
-      input_lista_numero.className = "inputlistamodelo";
+      input_lista_numero.id = "inputnomelista2"//`input_numero${dbNomeDaLista.id}`;
+      input_lista_numero.className = "inputnomelista2";
       input_lista_numero.placeholder = "Nome Lista";
       input_lista_numero.value = dbNomeDaLista.nomeDaSuaLista;
       input_lista_numero.readOnly = true;
   
-      var input_lista_id = document.createElement("input");
-      input_lista_id.type = "text";
-      input_lista_id.id = `input_id${dbNomeDaLista.id}`;
-      input_lista_id.className = "inputlistamodelo";
-      input_lista_id.placeholder = "ID";
-      input_lista_id.value = dbNomeDaLista.id;
-      input_lista_id.readOnly = true;
+      var input_lista_id_ = document.createElement("input");
+      input_lista_id_.type = "text";
+      input_lista_id_.id = `input_id${dbNomeDaLista.id}`;
+      input_lista_id_.className = "inputlistamodelo";
+      input_lista_id_.placeholder = "ID";
+      input_lista_id_.value = dbNomeDaLista.id;
+      input_lista_id_.readOnly = true;
   
-      divlista.appendChild(input_lista_id);
+      // divlista.appendChild(input_lista_id_);
       divlista.appendChild(input_lista_numero);
   
       document.getElementById("conteudo_itemlista_linha").appendChild(divlista);
+      constroilista();
+    }
+
+
+      function constroilista()
+      {
+        
+      
+
+        for (i=0;i<dbLista.length;i++ )
+      {
+        var divlista2 = document.createElement("div");
+        divlista2.id = "divlista";
+        console.log("i vale = ",i);
+
+        // "id": 2,
+//         "idDbNomeLista": 2,
+//         "nomeDaSuaLista": "teste 3",
+//         "itemLista": "teste 1",
+//         "quemVaiComprar": "novo teste",
+//         "sugestaoDeLugar": "santo"
+
+        var input_lista_id = document.createElement("input");
+        input_lista_id.type="text";
+        input_lista_id.id=`input_numero${i}`;
+        input_lista_id.class="inputlistamodelo";
+        input_lista_id.placeholder ="id";
+        input_lista_id.value=dbLista[i].id;
+        input_lista_id.readOnly=true;
+        input_lista_id.labels="id";
+
+        var input_lista_idDbNomeLista = document.createElement("input");
+        input_lista_idDbNomeLista.type="text";
+        input_lista_idDbNomeLista.id=`input_numero${i}`;
+        input_lista_idDbNomeLista.class="inputlistamodelo";
+        input_lista_idDbNomeLista.placeholder ="id";
+        input_lista_idDbNomeLista.value=dbLista[i].idDbNomeLista;
+        input_lista_idDbNomeLista.readOnly=true;
+
+        var 
+        input_lista_nomeDaSuaLista = document.createElement("input");
+        input_lista_nomeDaSuaLista.type="text";
+        input_lista_nomeDaSuaLista.id=`input_numero${i}`;
+        input_lista_nomeDaSuaLista.class="inputlistamodelo";
+        input_lista_nomeDaSuaLista.placeholder ="nomeDaSuaLista";
+        input_lista_nomeDaSuaLista.value=dbLista[i].nomeDaSuaLista;
+        input_lista_nomeDaSuaLista.readOnly=true;
+
+        var input_lista_itemLista = document.createElement("input");
+        input_lista_itemLista.type="text";
+        input_lista_itemLista.id=`input_numero${i}`;
+        input_lista_itemLista.class="inputlistamodelo";
+        input_lista_itemLista.placeholder ="itemLista";
+        input_lista_itemLista.value=dbLista[i].itemLista;
+        input_lista_itemLista.readOnly=true;
+
+        var 
+        input_lista_quemVaiComprar = document.createElement("input");
+        input_lista_quemVaiComprar.type="text";
+        input_lista_quemVaiComprar.id=`input_numero${i}`;
+        input_lista_quemVaiComprar.class="inputlistamodelo";
+        input_lista_quemVaiComprar.placeholder ="id";
+        input_lista_quemVaiComprar.value=dbLista[i].quemVaiComprar;
+        input_lista_quemVaiComprar.readOnly=true;
+
+
+        var 
+        input_lista_sugestaoDeLugar = document.createElement("input");
+        input_lista_sugestaoDeLugar.type="text";
+        input_lista_sugestaoDeLugar.id=`input_numero${i}`;
+        input_lista_sugestaoDeLugar.class="inputlistamodelo";
+        input_lista_sugestaoDeLugar.placeholder ="id";
+        input_lista_sugestaoDeLugar.value=dbLista[i].sugestaoDeLugar;
+        input_lista_sugestaoDeLugar.readOnly=true;
+
+
+        console.log(input_lista_id,input_lista_idDbNomeLista,input_lista_itemLista,
+          input_lista_nomeDaSuaLista,input_lista_quemVaiComprar,input_lista_sugestaoDeLugar)
+
+        divlista2.appendChild(input_lista_id);
+        divlista2.appendChild(input_lista_idDbNomeLista);
+        divlista2.appendChild(input_lista_itemLista);
+        divlista2.appendChild(input_lista_nomeDaSuaLista);
+        divlista2.appendChild(input_lista_quemVaiComprar);
+        divlista2.appendChild(input_lista_sugestaoDeLugar);
+
+        document.getElementById("conteudo_itemlista_linha").appendChild(divlista2);
+         
+
+      }
 
       
 
