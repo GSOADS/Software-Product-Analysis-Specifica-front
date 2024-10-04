@@ -4,6 +4,25 @@ const UrlserverPost= "http://localhost:8080/produtos/nome_lista"
 const UrlserverPost2= "http://localhost:8080/produtos/lista2"
 var conta=0;
 
+// document.addEventListener('DOMContentLoaded', function() {
+//   var title = document.getElementsById('titulo');
+//   document.title = title.textContent;
+// });
+
+//Mover titulo
+// document.addEventListener('DOMContentLoaded', function() {
+//   let title = " Lista de presente Home ";
+//   let position = 0;
+
+//   function moveTitle() {
+
+//       document.title = title.substring(position) + title.substring(0, position);
+//       position = (position + 1) % title.length;
+//   }
+
+//   setInterval(moveTitle, 1); // Ajuste o intervalo conforme necessário
+// });
+
 
 function additem()
 { 
