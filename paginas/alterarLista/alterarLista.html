@@ -8,9 +8,13 @@
     <meta name= "Software Product" content="Alterar itens Lista">
     <link rel="stylesheet" href="/paginas/alterarLista/alterarLista.css">
     <script src = "/paginas/alterarLista/alterarLista.js"> </script>
+
    
 </head>
 <body>
+    <div id="container"></div>
+
+    
         
     <header class="cabeçalho">
         <h1 class="headerh1">Software product project back and front</h1>
@@ -53,4 +57,23 @@
 
     
 </body>
+<script>
+    // Função que será chamada ao clicar no botão
+    function aoClicar() {
+        alert("O botão foi clicado!");
+    }
+
+    // Criar um novo elemento botão
+    var botao = document.createElement("button");
+    botao.id="botaosEditar";
+
+    // Definir o texto do botão
+    botao.innerHTML = "Clique aqui";
+
+    // Adicionar um evento de clique ao botão
+    botao.addEventListener("click", aoClicar);
+
+    // Adicionar o botão ao corpo do documento ou a um container específico
+    document.getElementById("container").appendChild(botao);
+</script>
 </html>

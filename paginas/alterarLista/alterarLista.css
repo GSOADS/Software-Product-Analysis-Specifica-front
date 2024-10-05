@@ -125,7 +125,7 @@ body
 {
   display: flex;
     /* border: 1px solid red; */
-    margin: 10px;
+    margin: 5px;
     height: 40px;
     border: 3px solid red;
 }
@@ -156,6 +156,7 @@ body
 .conteudo_itemlista_linha input
 {font-family: "BungeeSpice-Regular";
   text-align: center;
+  border-color: blueviolet;
   
 
     margin: 10px;
@@ -194,7 +195,7 @@ body
 
 .inputlistamodelo
 {font-family: "BungeeSpice-Regular";
-    width: auto;
+    width: 10px;
     height: 20px;
 }
 
@@ -220,6 +221,23 @@ body
     width: 100px;
     height: 30px;
     margin: 6px;
+}
+
+
+#botaosEditar
+{border-radius: 10px;
+  font-family: "BungeeSpice-Regular";
+  font-size:xx-small;
+    width: 120px;
+    height: 30px;
+    margin: 6px;
+}
+
+.formater
+{
+
+  border: 2px solid red;
+  
 }
 
 
