@@ -211,7 +211,7 @@ function buscar()
           botao_salvar_lista.innerHTML = "Salvar";
           botao_salvar_lista.onclick = salvar;
           // botao_editar_lista.className="botaosEditar";
-          botao_salvar_lista.id="botaosEditar";  
+          botao_salvar_lista.id="botaosSalvar";  
 
 
 

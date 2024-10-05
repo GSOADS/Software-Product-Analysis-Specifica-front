@@ -227,7 +227,15 @@ body
 #botaosEditar
 {border-radius: 10px;
   font-family: "BungeeSpice-Regular";
-  font-size:xx-small;
+  /* font-size:large; */
+    width: 120px;
+    height: 30px;
+    margin: 6px;
+}
+#botaosSalvar
+{border-radius: 10px;
+  font-family: "BungeeSpice-Regular";
+  /* font-size:xx-small; */
     width: 120px;
     height: 30px;
     margin: 6px;
