@@ -6,6 +6,8 @@ const UrlserverPost2= "http://localhost:8080/produtos/lista2"
 var dbNomeDaLista=dbNomeDaLista;
 var dbLista=dbLista;
 var buscar_realizada_sucesso=false;
+var itens_lista=0;
+var editar_status = false
 
 
 var conta=0;
@@ -100,6 +102,7 @@ function buscar()
 
         for (i=0;i<dbLista.length;i++ )
       {
+        itens_lista=i;
         var divlista2 = document.createElement("div");
         divlista2.id = "divlista";
         console.log("i vale = ",i);
@@ -113,7 +116,7 @@ function buscar()
 
         var input_lista_id = document.createElement("input");
         input_lista_id.type="text";
-        input_lista_id.id=`input_numero${i}`;
+        input_lista_id.id=`input_lista_id${i}`;
         input_lista_id.class="inputlistamodelo";
         input_lista_id.placeholder ="id";
         input_lista_id.value=dbLista[i].id;
@@ -122,7 +125,7 @@ function buscar()
 
         var input_lista_idDbNomeLista = document.createElement("input");
         input_lista_idDbNomeLista.type="text";
-        input_lista_idDbNomeLista.id=`input_numero${i}`;
+        input_lista_idDbNomeLista.id=`input_lista_idDbNomeLista${i}`;
         input_lista_idDbNomeLista.class="inputlistamodelo";
         input_lista_idDbNomeLista.placeholder ="id";
         input_lista_idDbNomeLista.value=dbLista[i].idDbNomeLista;
@@ -132,7 +135,7 @@ function buscar()
         var 
         input_lista_nomeDaSuaLista = document.createElement("input");
         input_lista_nomeDaSuaLista.type="text";
-        input_lista_nomeDaSuaLista.id=`input_numero${i}`;
+        input_lista_nomeDaSuaLista.id=`input_lista_nomeDaSuaLista${i}`;
         input_lista_nomeDaSuaLista.class="inputlistamodelo";
         input_lista_nomeDaSuaLista.placeholder ="nomeDaSuaLista";
         input_lista_nomeDaSuaLista.value=dbLista[i].nomeDaSuaLista;
@@ -140,7 +143,7 @@ function buscar()
 
         var input_lista_itemLista = document.createElement("input");
         input_lista_itemLista.type="text";
-        input_lista_itemLista.id=`input_numero${i}`;
+        input_lista_itemLista.id=`input_lista_itemLista${i}`;
         input_lista_itemLista.class="inputlistamodelo";
         input_lista_itemLista.placeholder ="itemLista";
         input_lista_itemLista.value=dbLista[i].itemLista;
@@ -149,7 +152,7 @@ function buscar()
         var 
         input_lista_quemVaiComprar = document.createElement("input");
         input_lista_quemVaiComprar.type="text";
-        input_lista_quemVaiComprar.id=`input_numero${i}`;
+        input_lista_quemVaiComprar.id=`input_lista_quemVaiComprar${i}`;
         input_lista_quemVaiComprar.class="inputlistamodelo";
         input_lista_quemVaiComprar.placeholder ="id";
         input_lista_quemVaiComprar.value=dbLista[i].quemVaiComprar;
@@ -159,7 +162,7 @@ function buscar()
         var 
         input_lista_sugestaoDeLugar = document.createElement("input");
         input_lista_sugestaoDeLugar.type="text";
-        input_lista_sugestaoDeLugar.id=`input_numero${i}`;
+        input_lista_sugestaoDeLugar.id=`input_lista_sugestaoDeLugar${i}`;
         input_lista_sugestaoDeLugar.class="inputlistamodelo";
         input_lista_sugestaoDeLugar.placeholder ="id";
         input_lista_sugestaoDeLugar.value=dbLista[i].sugestaoDeLugar;
@@ -178,8 +181,8 @@ function buscar()
 
         divlista2.appendChild(input_lista_id);
         divlista2.appendChild(input_lista_idDbNomeLista);
-        divlista2.appendChild(input_lista_itemLista);
         divlista2.appendChild(input_lista_nomeDaSuaLista);
+        divlista2.appendChild(input_lista_itemLista);
         divlista2.appendChild(input_lista_quemVaiComprar);
         divlista2.appendChild(input_lista_sugestaoDeLugar);
 
@@ -239,11 +242,50 @@ function buscar()
 
 
   }
-  function editar() {
-    
-    alert("O botão editar foi clicado!");
+  function editar() 
+  {
+    editar_status = true;
+
+    for(i=0;i<=itens_lista;i++)
+    {
+      console.log("valor da lista ="+itens_lista,"valor de i ="+i);
+      
+      let input_lista_id=document.getElementById(`input_lista_id${i}`);
+      let input_lista_idDbNomeLista=document.getElementById(`input_lista_idDbNomeLista${i}`);
+      let input_lista_nomeDaSuaLista=document.getElementById(`input_lista_nomeDaSuaLista${i}`);
+      let input_lista_itemLista=document.getElementById(`input_lista_itemLista${i}`);
+      let input_lista_quemVaiComprar=document.getElementById(`input_lista_quemVaiComprar${i}`);
+      let input_lista_sugestaoDeLugar=document.getElementById(`input_lista_sugestaoDeLugar${i}`);
+  
+      input_lista_id.readOnly=true;
+      input_lista_idDbNomeLista.readOnly=true;
+      input_lista_nomeDaSuaLista.readOnly=true;
+      input_lista_itemLista.readOnly=false;
+      input_lista_quemVaiComprar.readOnly=false;
+      input_lista_sugestaoDeLugar.readOnly=false;
+      
+
+      
+
+
+
+    }
+
+  
+    alert("O botão editar foi clicado! ",console.log(itens_lista));
   }
   function salvar() {
+    if(editar_status==true)
+      {
+        alert("O botão salvar foi clicado! E o editar esta ativo");
+
+
+
+      }
+      else
+      {
+        alert("O botão salvar foi clicado! Mas editar não foi ativado");
+      }
     
-    alert("O botão salvar foi clicado!");
+    
   }

@@ -159,8 +159,8 @@ function buscar()
 
         divlista2.appendChild(input_lista_id);
         divlista2.appendChild(input_lista_idDbNomeLista);
-        divlista2.appendChild(input_lista_itemLista);
         divlista2.appendChild(input_lista_nomeDaSuaLista);
+        divlista2.appendChild(input_lista_itemLista);
         divlista2.appendChild(input_lista_quemVaiComprar);
         divlista2.appendChild(input_lista_sugestaoDeLugar);
 

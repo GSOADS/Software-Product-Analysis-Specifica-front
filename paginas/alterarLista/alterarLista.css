@@ -215,6 +215,13 @@ body
     margin: 6px;
 }
 
+#botaobuscar:hover
+{
+ 
+    background-color: blue;
+  
+}
+
 #botaosalvar
 {border-radius: 10px;
   font-family: "BungeeSpice-Regular";
@@ -239,6 +246,17 @@ body
     width: 120px;
     height: 30px;
     margin: 6px;
+}
+
+#botaosEditar:hover
+{
+  background-color: blue;
+}
+
+#botaosSalvar:hover
+{
+  background-color: blue;
+
 }
 
 .formater
