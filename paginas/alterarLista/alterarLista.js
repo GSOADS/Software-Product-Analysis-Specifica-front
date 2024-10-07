@@ -279,13 +279,64 @@ function buscar()
       {
         alert("O botão salvar foi clicado! E o editar esta ativo");
 
+        var dbLista = new Array();
+        
+        
+      
+        for ( x =0; x<=itens_lista;x++)
+        {
+          console.log("valor da lista ="+itens_lista,"valor de x ="+x);
+          // Obtém os valores dos inputs
+          let input_lista_id=document.getElementById(`input_lista_id${x}`);
+          let input_lista_idDbNomeLista=document.getElementById(`input_lista_idDbNomeLista${x}`);
+          let input_lista_nomeDaSuaLista=document.getElementById(`input_lista_nomeDaSuaLista${x}`);
+          let input_lista_itemLista=document.getElementById(`input_lista_itemLista${x}`);
+          let input_lista_quemVaiComprar=document.getElementById(`input_lista_quemVaiComprar${x}`);
+          let input_lista_sugestaoDeLugar=document.getElementById(`input_lista_sugestaoDeLugar${x}`);
+      
+      
+           // Cria um objeto JSON com os valores obtidos
+      
+          var lista = 
+          {
+            "id": input_lista_id.value,
+            "idDbNomeLista":input_lista_idDbNomeLista.value,
+            "nomeDaSuaLista":input_lista_nomeDaSuaLista.value,
+            "itemLista":input_lista_itemLista.value,
+            "quemVaiComprar": input_lista_quemVaiComprar.value,
+            "sugestaoDeLugar": input_lista_sugestaoDeLugar.value
+          };
+      
+          
+      
+      
+          //Salva o valor das informaçoes do json no array
+      
+          dbLista[x] = lista;
+          
+      
+      
+      
+          // console.log(quantidade_linhas);
+        }
+      
+        const data = 
+        {
+          "dbLista": dbLista
+        };
+        
+
+
+
 
 
       }
+      //enviar dados salvar lista
       else
       {
         alert("O botão salvar foi clicado! Mas editar não foi ativado");
       }
+      console.log(dbLista)
     
     
   }
