@@ -1,8 +1,12 @@
 //alert("TEXTO");//se tiver funcionando um alerta vai aparecer
 
 const urlserverGetObterLista="http://localhost:8080/lista/obterListaEItens/"
+const UrlserverPutAlterarLista="http://localhost:8080/lista/alterarListaItens/"
 
 const UrlserverPost2= "http://localhost:8080/produtos/lista2"
+
+
+
 var dbNomeDaLista=dbNomeDaLista;
 var dbLista=dbLista;
 var buscar_realizada_sucesso=false;
@@ -324,19 +328,43 @@ function buscar()
         {
           "dbLista": dbLista
         };
-        
 
-
-
-
-
+        salvar_enviar(data);
       }
       //enviar dados salvar lista
       else
       {
         alert("O botão salvar foi clicado! Mas editar não foi ativado");
       }
-      console.log(dbLista)
+      console.log(dbLista);
     
     
   }
+
+  function salvar_enviar(data)
+  {
+    console.log("Estou no POST")
+  const configuracao = 
+  {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json',
+        // 'headerLista': 'Dado'
+    },
+    body: JSON.stringify(data)
+  };
+
+// Enviando a requisição
+fetch(UrlserverPutAlterarLista, configuracao)
+  // .then(response => response.json())
+  .then(data => {
+    console.log('Sucesso:', data);
+    alert('Sucesso: A operação foi concluída com êxito!');
+    // limparLista();
+
+    
+  })
+  .catch(error => console.error('Erro:', error));
+
+}
+
